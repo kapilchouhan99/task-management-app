@@ -1,0 +1,50 @@
+  <header>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div id="intro" class="bg-image shadow-2-strong">
+        <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-xl-5 col-md-8">
+                <form class="bg-white rounded shadow-5-strong p-5">
+                  <div class="form-outline mb-4" data-mdb-input-init>
+                    <label class="form-label" for="form1Example1", style="color: white;">Email address</label>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", id:"form1Example2", class:"form-control" %>
+                  </div>
+
+                  <div class="form-outline mb-4" data-mdb-input-init>
+                    <label class="form-label" for="form1Example2", style="color: white;">Password</label>
+                    <%= f.password_field :password, autocomplete: "current-password", id:"form1Example2", class:"form-control" %>
+                  </div>
+
+                  <div class="form-outline mb-4" data-mdb-input-init>
+                    <label class="form-label" for="form1Example2", style="color: white;">Password confirmation</label>
+                    <%= f.password_field :password_confirmation, autocomplete: "current-password", id:"form1Example2", class:"form-control" %>
+                  </div>
+
+                  <%= f.submit "Sign up", class:"btn btn-primary btn-block" %>
+                </form>
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </header>
+<style>
+#intro {
+  background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
+  height: 100vh;
+}
+
+/* Height for devices larger than 576px */
+@media (min-width: 992px) {
+  #intro {
+    margin-top: -58.59px;
+  }
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
+</style>
